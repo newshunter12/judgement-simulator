@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from "next/head";
+import Calendar from "../component/calendar";
 
 export default function Home() {
   return (
@@ -13,9 +14,9 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">판결문 시뮬레이터!</a>
         </h1>
 
-        <p className="description">
-          내가 판사라니!?
-        </p>
+        <p className="description">내가 판사라니!?</p>
+
+        <Calendar yyyymmdd={"20201204"} />
 
         <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
@@ -54,7 +55,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
@@ -205,5 +206,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
