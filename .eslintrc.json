@@ -1,57 +1,56 @@
 {
-	"parserOptions": {
-	  "ecmaVersion": 2020,
-	  "sourceType": "module",
-	  "ecmaFeatures": {
-		"jsx": true
-	  }
-	},
-	"settings": {
-	  "react": {
-		"version": "detect"
-	  }
-	},
-	"env": {
-	  "browser": true,
-	  "node": true,
-	  "jest": true
-	},
-	"extends": [
-	  "eslint:recommended",
-	  "plugin:react/recommended",
-	  "plugin:prettier/recommended"
-	],
-	"plugins": [
-	  "import",
-	  "react-hooks"
-	],
-	"rules": {
-	  "semi": [
-		"error",
-		"always"
-	  ],
-	  "import/no-named-as-default-member": "off",
-	  "import/namespace": "off",
-	  "import/order": [
-		"error",
-		{
-		  "alphabetize": {
-			"order": "asc",
-			"caseInsensitive": true
-		  },
-		  "groups": [
-			"index",
-			"sibling",
-			"parent",
-			"internal",
-			"external",
-			"builtin",
-			"object"
-		  ]
-		}
-	  ],
-	  "jsx-a11y/label-has-associated-control": "off",
-	  "jsx-a11y/anchor-is-valid": "off"
-	}
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "import",
+    "react-hooks"
+  ],
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "import/no-named-as-default-member": "off",
+    "import/namespace": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "groups": [
+          "index",
+          "sibling",
+          "parent",
+          "internal",
+          "external",
+          "builtin",
+          "object"
+        ]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   }
-  
+}
