@@ -1,5 +1,5 @@
-import Description from "./description";
-import WeightCondition from "./weightCondition";
+import Description from "./Description";
+import WeightCondition from "./WeightCondition";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 

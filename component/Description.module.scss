@@ -1,0 +1,11 @@
+@import "styles/variables";
+
+.title {
+  font-size: $title;
+  font-weight: 600;
+}
+
+.content {
+  font-size: $text;
+  font-weight: 600;
+}
