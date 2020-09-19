@@ -11,12 +11,12 @@ function Judgement(): React.ReactElement {
       <Router>
         <ul>
           <li>
-            <Link to="/description">
+            <Link to="/Description">
               <a>(1) 사건개요 </a>
             </Link>
           </li>
           <li>
-            <Link to="/weightCondition">
+            <Link to="/WeightCondition">
               <a>(2) 양형조건 </a>
             </Link>
           </li>
@@ -38,10 +38,10 @@ function Judgement(): React.ReactElement {
         </ul>
 
         <Switch>
-          <Route path="/description">
+          <Route path="/Description">
             <Description />
           </Route>
-          <Route path="/weightCondition">
+          <Route path="/WeightCondition">
             <WeightCondition />
           </Route>
         </Switch>
