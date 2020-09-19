@@ -1,4 +1,5 @@
 {
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module",
@@ -9,6 +10,11 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
     }
   },
   "env": {
@@ -17,13 +23,20 @@
     "jest": true
   },
   "extends": [
+    "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:css-modules/recommended"
   ],
+  "ignorePatterns": ".next/",
   "plugins": [
+    "@typescript-eslint",
     "import",
-    "react-hooks"
+    "react-hooks",
+    "css-modules"
   ],
   "rules": {
     "semi": [
@@ -51,6 +64,21 @@
       }
     ],
     "jsx-a11y/label-has-associated-control": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "@typescript-eslint/no-inferrable-types": [
+      "warn",
+      {
+        "ignoreParameters": true
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }

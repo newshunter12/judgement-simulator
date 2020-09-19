@@ -1,9 +1,9 @@
-import Menubar from "component/menubar";
+import styles from "./index.module.scss";
 import Head from "next/head";
-import styles from "pages/index.module.scss";
+import Link from "next/link";
 import React from "react";
 
-export default function Home() {
+export default function Home(): React.ReactElement {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,9 +13,10 @@ export default function Home() {
 
       <div className={styles.header}>판결문 시뮬레이터 </div>
       <div className={styles.main}>
-        <Menubar />
+        <Link href={`/judgement`}>
+          <a>판결하러 가기</a>
+        </Link>
       </div>
-
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
