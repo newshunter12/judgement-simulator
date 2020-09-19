@@ -29,6 +29,7 @@
   "license": "ISC",
   "dependencies": {
     "googleapis": "^59.0.0",
+    "js-yaml": "^3.14.0",
     "jsonwebtoken": "^8.5.1",
     "next": "^9.5.3",
     "next-cookies": "^2.0.3",
