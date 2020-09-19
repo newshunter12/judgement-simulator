@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const Calendar = ({ yyyymmdd }) => {
@@ -33,7 +34,7 @@ const Calendar = ({ yyyymmdd }) => {
         <thead>
           <tr>
             {"sun,mon,tue,wed,thu,fri,sat".split(",").map((day) => (
-              <th>{day}</th>
+              <th key={day}>{day}</th>
             ))}
           </tr>
         </thead>
@@ -49,6 +50,10 @@ const Calendar = ({ yyyymmdd }) => {
       </table>
     </div>
   );
+};
+
+Calendar.propTypes = {
+  yyyymmdd: PropTypes.string.isRequired,
 };
 
 export default Calendar;
