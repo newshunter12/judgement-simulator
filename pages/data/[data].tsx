@@ -1,31 +1,49 @@
-//import yaml from "js-yaml";
-//import Case from "../utils/Case.interface";
+import Judgement from "component/judgement";
+import yaml from "js-yaml";
 import { InferGetStaticPropsType } from "next";
 import { GetStaticPaths } from "next";
 import React from "react";
-//import fs from "fs";
+import fs from "fs";
 
-function Data({ caseName }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement {
+interface Props {
+  props: {
+    caseName: string;
+    json: string;
+  };
+}
+
+function Data({
+  caseName,
+  json,
+}: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement {
   return (
     <div>
-      <p>Data: {caseName}</p>
+      <Judgement caseName={caseName} json={json} />
     </div>
   );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [{ params: { data: "1" } }, { params: { data: "2" } }],
+    paths: [{ params: { data: "1" } }],
     fallback: true,
   };
 };
 
-export async function getStaticProps(ctx): Promise<{ props: { caseName: string } }> {
-  console.log(ctx.params.casename);
-  const caseName = "c1";
+export async function getStaticProps(ctx): Promise<Props> {
+  const caseName = ctx.params.data;
+  let json = "";
+  try {
+    const doc = yaml.safeLoad(fs.readFileSync("utils/crimeCases.yml", "utf8"));
+    const caseObject = doc[0];
+    json = JSON.stringify(caseObject);
+  } catch (err) {
+    console.log(err);
+  }
   return {
     props: {
       caseName: caseName,
+      json: json,
     },
   };
 }

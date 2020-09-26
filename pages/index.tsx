@@ -13,7 +13,7 @@ export default function Home(): React.ReactElement {
 
       <div className={styles.header}>판결문 시뮬레이터 </div>
       <div className={styles.main}>
-        <Link href={`/data/casename`}>
+        <Link href={`/data/소라넷사건`}>
           <a>판결하러 가기</a>
         </Link>
       </div>
