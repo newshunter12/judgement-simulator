@@ -8,17 +8,17 @@ import fs from "fs";
 interface Props {
   props: {
     caseName: string;
-    json: string;
+    caseObject: Record<string, any>;
   };
 }
 
 function Data({
   caseName,
-  json,
+  caseObject,
 }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement {
   return (
     <div>
-      <Judgement caseName={caseName} json={json} />
+      <Judgement caseName={caseName} caseObject={caseObject} />
     </div>
   );
 }
@@ -32,18 +32,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export async function getStaticProps(ctx): Promise<Props> {
   const caseName = ctx.params.data;
-  let json = "";
-  try {
-    const doc = yaml.safeLoad(fs.readFileSync("utils/crimeCases.yml", "utf8"));
-    const caseObject = doc[0];
-    json = JSON.stringify(caseObject);
-  } catch (err) {
-    console.log(err);
-  }
+  const docs = yaml.safeLoad(fs.readFileSync("utils/crimeCases.yml", "utf8"));
+  const caseObject = docs[0];
+
   return {
     props: {
-      caseName: caseName,
-      json: json,
+      caseName,
+      caseObject,
     },
   };
 }

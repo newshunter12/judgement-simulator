@@ -2,16 +2,17 @@ import React from "react";
 
 interface Props {
   caseName: string;
-  json: string;
+  caseObject: Record<string, any> | undefined;
 }
 
 //TODO: 유저가 어디 메뉴에 있는지에 대한 정보를 useState로 두기
-function Judgement({ json, caseName }: Props): React.ReactElement {
-  const caseContents = json;
+function Judgement({ caseObject, caseName }: Props): React.ReactElement {
+  if (caseObject === undefined) return <div>Loading...</div>;
+
   return (
     <div>
       <h1>{caseName}</h1>
-      {caseContents}
+      {caseObject?.caseName}
     </div>
   );
 }
