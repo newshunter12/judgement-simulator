@@ -24,15 +24,18 @@ function Data({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const docs = loadDataFromYaml();
+  const paths = docs.map((doc) => ({ params: { data: encodeURIComponent(doc.caseName) } }));
+
   return {
-    paths: [{ params: { data: "1" } }],
-    fallback: true,
+    paths,
+    fallback: false,
   };
 };
 
 export async function getStaticProps(ctx): Promise<Props> {
   const caseName = ctx.params.data;
-  const docs = yaml.safeLoad(fs.readFileSync("utils/crimeCases.yml", "utf8"));
+  const docs = loadDataFromYaml();
   const caseObject = docs[0];
 
   return {
@@ -41,6 +44,10 @@ export async function getStaticProps(ctx): Promise<Props> {
       caseObject,
     },
   };
+}
+
+function loadDataFromYaml(): Record<string, any>[] {
+  return yaml.safeLoad(fs.readFileSync("utils/crimeCases.yml", "utf8")) as Record<string, any>[];
 }
 
 export default Data;
