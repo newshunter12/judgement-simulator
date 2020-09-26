@@ -9,7 +9,7 @@ import fs from "fs";
 interface Props {
   props: {
     caseName: string;
-    caseObject: Record<string, any>;
+    caseObject: Case;
   };
 }
 

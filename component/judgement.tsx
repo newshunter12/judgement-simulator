@@ -13,7 +13,7 @@ function Judgement({ caseObject, caseName }: Props): React.ReactElement {
   return (
     <div>
       <h1>{caseName}</h1>
-      {caseObject.caseName}
+      <div>{caseObject.caseName} </div>
     </div>
   );
 }
