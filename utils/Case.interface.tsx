@@ -1,5 +1,5 @@
 interface Case {
-  cassName: string;
+  caseName: string;
   caseNum: string;
   caseTitle: string;
   crimes: [

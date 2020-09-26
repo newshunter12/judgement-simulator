@@ -1,4 +1,5 @@
 import Judgement from "component/judgement";
+import Case from "utils/Case.interface";
 import yaml from "js-yaml";
 import { InferGetStaticPropsType } from "next";
 import { GetStaticPaths } from "next";
@@ -46,8 +47,8 @@ export async function getStaticProps(ctx): Promise<Props> {
   };
 }
 
-function loadDataFromYaml(): Record<string, any>[] {
-  return yaml.safeLoad(fs.readFileSync("utils/crimeCases.yml", "utf8")) as Record<string, any>[];
+function loadDataFromYaml(): Case[] {
+  return yaml.safeLoad(fs.readFileSync("utils/crimeCases.yml", "utf8")) as Case[];
 }
 
 export default Data;

@@ -1,8 +1,9 @@
+import Case from "utils/Case.interface";
 import React from "react";
 
 interface Props {
   caseName: string;
-  caseObject: Record<string, any> | undefined;
+  caseObject: Case | undefined;
 }
 
 //TODO: 유저가 어디 메뉴에 있는지에 대한 정보를 useState로 두기
@@ -12,7 +13,7 @@ function Judgement({ caseObject, caseName }: Props): React.ReactElement {
   return (
     <div>
       <h1>{caseName}</h1>
-      {caseObject?.caseName}
+      {caseObject.caseName}
     </div>
   );
 }
