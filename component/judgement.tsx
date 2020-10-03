@@ -1,3 +1,4 @@
+import Description from "./Description";
 import Case from "utils/Case.interface";
 import React from "react";
 
@@ -13,7 +14,8 @@ function Judgement({ caseObject, caseName }: Props): React.ReactElement {
   return (
     <div>
       <h1>{caseName}</h1>
-      <div>{caseObject.caseName} </div>
+
+      <Description instructions={caseObject.instructions} caseTitle={caseObject.caseTitle} />
     </div>
   );
 }
