@@ -15,7 +15,11 @@ function Judgement({ caseObject, caseName }: Props): React.ReactElement {
     <div>
       <h1>{caseName}</h1>
 
-      <Description instructions={caseObject.instructions} caseTitle={caseObject.caseTitle} />
+      <Description
+        instructions={caseObject.instructions}
+        caseTitle={caseObject.caseTitle}
+        caseNum={caseObject.caseNum}
+      />
     </div>
   );
 }

@@ -8,14 +8,18 @@ interface Props {
     content: string;
   }[];
   caseTitle: string;
+  caseNum: string;
 }
 
-export default function Description({ instructions, caseTitle }: Props): React.ReactElement {
+export default function Description({
+  instructions,
+  caseTitle,
+  caseNum,
+}: Props): React.ReactElement {
   const [index, setIndex] = useState(0);
 
   const title = caseTitle;
   const content = instructions[index].content;
-  const img = `IMAGE_${index}`; //TODO: 이미지명 caseNum_n 으로 저장
 
   return (
     <div>
@@ -28,7 +32,9 @@ export default function Description({ instructions, caseTitle }: Props): React.R
       <div className={styles.title}> {title}</div>
       <div>
         <div className={styles.content}>{content}</div>
-        <div> {img}</div>
+        <div>
+          <img src={`/imgs/${caseNum}_${index}.svg`}></img>
+        </div>
       </div>
       <div>
         <NextIcon
