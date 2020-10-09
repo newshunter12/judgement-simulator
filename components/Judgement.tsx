@@ -1,4 +1,5 @@
 import Description from "./Description";
+import SentenceCondition from "./SentenceCondition";
 import Case from "utils/Case.interface";
 import React from "react";
 
@@ -13,13 +14,19 @@ function Judgement({ caseObject, caseName }: Props): React.ReactElement {
 
   return (
     <div>
-      <h1>{caseName}</h1>
+      <div>
+        <h1>{caseName}</h1>
 
-      <Description
-        instructions={caseObject.instructions}
-        caseTitle={caseObject.caseTitle}
-        caseNum={caseObject.caseNum}
-      />
+        <Description
+          instructions={caseObject.instructions}
+          caseTitle={caseObject.caseTitle}
+          caseNum={caseObject.caseNum}
+        />
+      </div>
+      <hr />
+      <div>
+        <SentenceCondition statutes={caseObject.statutes} />
+      </div>
     </div>
   );
 }
