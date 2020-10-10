@@ -10,6 +10,7 @@ interface Case {
   instructions: [
     {
       content: string;
+      title: string;
     },
   ];
   statutes: [
@@ -21,8 +22,16 @@ interface Case {
   ];
 
   petition: {
-    defendant: boolean;
+    defendant: string;
     victim: string;
+  };
+
+  plusImpacts: {
+    reason: string[];
+  };
+
+  minusImpacts: {
+    reason: string[];
   };
 
   result: {

@@ -1,11 +1,10 @@
 import styles from "./Description.module.scss";
-import PrevIcon from "public/imgs/arrow-left.svg";
-import NextIcon from "public/imgs/arrow-right.svg";
-import React, { useState } from "react";
+import React from "react";
 
 interface Props {
   instructions: {
     content: string;
+    title: string;
   }[];
   caseTitle: string;
   caseNum: string;
@@ -16,31 +15,21 @@ export default function Description({
   caseTitle,
   caseNum,
 }: Props): React.ReactElement {
-  const [index, setIndex] = useState(0);
-
   const title = caseTitle;
-  const content = instructions[index].content;
 
   return (
     <div>
+      <div className={styles.caseTitle}> {title}</div>
       <div>
-        <PrevIcon
-          className={index === 0 ? styles.inActive : ""}
-          onClick={() => setIndex(index - 1)}
-        />
-      </div>
-      <div className={styles.title}> {title}</div>
-      <div>
-        <div className={styles.content}>{content}</div>
-        <div>
-          <img src={`/imgs/${caseNum}_${index}.svg`}></img>
-        </div>
-      </div>
-      <div>
-        <NextIcon
-          className={index === 2 ? styles.inActive : ""}
-          onClick={() => setIndex(index + 1)}
-        />
+        <ul>
+          {instructions.map((instruction, i) => (
+            <li key={i} className={styles.instruction}>
+              <div className={styles.title}>소제목: {instruction.title}</div>
+              <div className={styles.content}>{instruction.content}</div>
+              <img src={`/imgs/${caseNum}_${i}.svg`}></img>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
