@@ -1,4 +1,4 @@
-import Judgement from "component/judgement";
+import Judgement from "components/Judgement";
 import Case from "utils/Case.interface";
 import yaml from "js-yaml";
 import { InferGetStaticPropsType } from "next";

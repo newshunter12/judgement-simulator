@@ -12,7 +12,7 @@ interface Case {
       content: string;
     },
   ];
-  statues: [
+  statutes: [
     {
       article: string;
       config_requirements: string;
@@ -20,12 +20,11 @@ interface Case {
     },
   ];
 
-  petitions: [
-    {
-      category: string;
-      content: string;
-    },
-  ];
+  petition: {
+    defendant: boolean;
+    victim: string;
+  };
+
   result: {
     trial: string;
     servitude?: number;
