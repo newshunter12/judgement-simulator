@@ -48,10 +48,9 @@
       sentencing:
 
   # 탄원서
-  petitions:
-    - isDefendant: true  # 피해자 측 or 가해자 측
-      content: "피고인 측 탄원서 내용"
-
+  petition:
+      defendant: "피고인 측 탄원서 내용"
+      victim: "피해자 측 탄원서 내용"
 
   # 실제 판결 결과
   result:

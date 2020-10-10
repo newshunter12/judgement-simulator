@@ -20,12 +20,11 @@ interface Case {
     },
   ];
 
-  petitions: [
-    {
-      isDefendant: boolean;
-      content: string;
-    },
-  ];
+  petition: {
+    defendant: boolean;
+    victim: string;
+  };
+
   result: {
     trial: string;
     servitude?: number;
