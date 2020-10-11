@@ -1,6 +1,8 @@
 import CasePsychology from "./CasePsychology";
 import Description from "./Description";
+import ResultReport from "./ResultReport";
 import SentenceCondition from "./SentenceCondition";
+import Sentencing from "./Setencing";
 import Case from "utils/Case.interface";
 import React from "react";
 
@@ -30,6 +32,14 @@ function Judgement({ caseObject, caseName }: Props): React.ReactElement {
       <hr />
       <div>
         <CasePsychology petition={caseObject.petition} />
+      </div>
+      <hr />
+      <div>
+        <Sentencing plusImpacts={caseObject.plusImpacts} minusImpacts={caseObject.minusImpacts} />
+      </div>
+      <hr />
+      <div>
+        <ResultReport result={caseObject.result} epilogue={caseObject.epilogue} />
       </div>
     </div>
   );

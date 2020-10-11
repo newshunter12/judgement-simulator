@@ -26,19 +26,15 @@ interface Case {
     victim: string;
   };
 
-  plusImpacts: {
-    reason: string[];
-  };
-
-  minusImpacts: {
-    reason: string[];
-  };
+  plusImpacts: string[];
+  minusImpacts: string[];
 
   result: {
     trial: string;
-    servitude?: number;
+    servitude: string;
     content: string;
-  };
+  }[];
+  epilogue: string;
 }
 
 export default Case;
