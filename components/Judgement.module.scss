@@ -2,8 +2,12 @@
   display: none;
 }
 
-.menu {
+.tab {
   color: black;
   font-size: 25px;
   font-weight: bold;
+}
+
+.clickedTab {
+  color: red;
 }
