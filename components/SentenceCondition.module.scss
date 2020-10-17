@@ -1,0 +1,42 @@
+@import "styles/variable";
+
+.caseContainer {
+  padding: 45px;
+  background-color: $white;
+}
+
+.caseTitle {
+  position: static;
+  font-size: $title;
+  font-weight: 600;
+  line-height: $title-line-height;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.instructionList {
+  padding: 15px 0 0 0;
+  margin: 0;
+}
+
+.instruction {
+  padding: 15px 0 0 0;
+  margin: 0;
+  list-style: none;
+  // outline: 1px solid $black;
+}
+
+.title {
+  width: fit-content;
+  padding: 5px 10px;
+  border: 1px solid $black;
+  border-radius: 30px;
+  font-size: $subtitle;
+  font-weight: bold;
+}
+
+.content {
+  margin-top: $content-line-height;
+  font-size: $content;
+  line-height: $content-line-height;
+}
