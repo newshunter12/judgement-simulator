@@ -26,7 +26,7 @@ export default function Description({
             <li key={i} className={styles.instruction}>
               <div className={styles.title}>{instruction.title}</div>
               <div className={styles.content}>{instruction.content}</div>
-              <img src={`/imgs/${caseNum}_${i}.svg`}></img>
+              <img src={`/imgs/${caseNum}_${i + 1}.svg`}></img>
             </li>
           ))}
         </ul>

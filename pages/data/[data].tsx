@@ -37,7 +37,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export async function getStaticProps(ctx): Promise<Props> {
   const caseName = ctx.params.data;
   const docs = loadDataFromYaml();
-  const caseObject = docs[0];
+  const caseObjects = docs.filter((caseObj) => caseObj.caseName === caseName);
+  const caseObject = caseObjects[0];
 
   return {
     props: {
