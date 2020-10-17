@@ -1,3 +1,5 @@
+@import "styles/variable";
+
 .container {
   display: flex;
   min-height: 100vh;
@@ -5,6 +7,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 0.5rem;
+  background-color: $canvas-bg;
 }
 
 .header {
@@ -22,6 +25,10 @@
   justify-content: center;
   padding: 5rem 0;
   //border: solid 1px purple;
+}
+
+.link {
+  color: white;
 }
 
 .footer {

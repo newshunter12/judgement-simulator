@@ -1,3 +1,4 @@
+import styles from "./SentenceCondition.module.scss";
 import React from "react";
 
 interface Props {
@@ -11,14 +12,17 @@ interface Props {
 function SentenceCondition({ statutes }: Props): React.ReactElement {
   return (
     <div>
-      <div>
-        <h1>죄목에 적용된 법령</h1>
-        <ul>
+      <div className={styles.caseContainer}>
+        <h1 className={styles.caseTitle}>죄목에 적용된 법령</h1>
+        <ul className={styles.instructionList}>
           {statutes.map((statute, i) => (
-            <li key={i}>
-              <div>{statute.article}</div>
-              <div>{statute.config_requirements}</div>
-              <div> {statute.sentencing}</div>
+            <li className={styles.instruction} key={i}>
+              <div className={styles.title}>{statute.article}</div>
+              <div className={styles.content}>
+                {statute.config_requirements}
+                <br></br>
+                {statute.sentencing}
+              </div>
             </li>
           ))}
         </ul>

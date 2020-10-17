@@ -19,7 +19,7 @@ function Judgement({ caseObject, caseName }: Props): React.ReactElement {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const tabList = useRef<HTMLUListElement>(null);
 
-  const taps = ["사건 개요", "양형 조건", "사건 심리", "가중/감경", "당신의 판결"];
+  const taps = ["사건 개요", "양형 조건", "사건 심리", "당신의 판결", "결과보기"];
 
   const comps = [
     <div key={0}>
@@ -49,8 +49,8 @@ function Judgement({ caseObject, caseName }: Props): React.ReactElement {
   }
 
   return (
-    <div>
-      <ul ref={tabList}>
+    <div className={styles.container}>
+      <ul className={styles.tabList} ref={tabList}>
         {taps.map((tab, i) => (
           <li key={i} className={`${styles.tab} ${i === selectedIndex ? styles.clickedTab : ""}`}>
             {tab}

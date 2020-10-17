@@ -13,16 +13,16 @@ export default function Home(): React.ReactElement {
         <div className={styles.header}>판결문 시뮬레이터 </div>
         <div className={styles.main}>
           <Link href={`/data/온라인 성착취 사이트 운영자`}>
-            <a>온라인 성착취 사이트 운영자</a>
+            <a className={styles.link}>온라인 성착취 사이트 운영자</a>
           </Link>
           <Link href={`/data/위력에 의한 성폭력`}>
-            <a>위력에 의한 성폭력</a>
+            <a className={styles.link}>위력에 의한 성폭력</a>
           </Link>
           <Link href={`/data/온라인 성착취 사이트 운영자`}>
-            <a>온라인 성착취 사이트 운영자</a>
+            <a className={styles.link}>온라인 성착취 사이트 운영자</a>
           </Link>
           <Link href={`/data/위력에 의한 성폭력`}>
-            <a>위력에 의한 성폭력</a>
+            <a className={styles.link}>위력에 의한 성폭력</a>
           </Link>
         </div>
         <footer className={styles.footer}>

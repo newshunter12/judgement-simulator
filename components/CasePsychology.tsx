@@ -1,3 +1,4 @@
+import styles from "./CasePsychology.module.scss";
 import React from "react";
 
 interface Props {
@@ -12,11 +13,12 @@ function CasePsychology({ petition }: Props): React.ReactElement {
   const victim = petition.victim;
 
   return (
-    <div>
-      <h1>탄원서를 읽어보세요</h1>
-
-      <div>{defendant} </div>
-      <div>{victim}</div>
+    <div className={styles.caseContainer}>
+      <h1 className={styles.caseTitle}>탄원서를 읽어보세요</h1>
+      <div className={styles.title}>피해자측</div>
+      <div className={styles.content}>{defendant} </div>
+      <div className={styles.title}>가해자측</div>
+      <div className={styles.content}>{victim}</div>
     </div>
   );
 }
