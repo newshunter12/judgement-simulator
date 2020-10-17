@@ -6,29 +6,64 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 0.5rem;
   background-color: $canvas-bg;
 }
 
 .header {
-  background: black;
-  color: white;
+  width: 100%;
+  color: black;
   font-size: 30px;
-  text-align: left;
+}
+
+.projectTitle {
+  width: 411px;
+  height: 80px;
+  padding-top: 10px;
+  margin: auto;
+  background: white;
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 60px;
+  text-align: center;
 }
 
 .main {
   display: flex;
-  flex: 1;
-  flex-direction: column;
+  width: 100%;
   align-items: center;
   justify-content: center;
   padding: 5rem 0;
-  //border: solid 1px purple;
 }
 
-.link {
-  color: white;
+.caseBox {
+  display: flex;
+  width: 420px;
+  height: 270px;
+  flex-direction: column;
+  padding-top: 75px;
+  margin: auto;
+  background-image: url("/imgs/case-box.svg");
+  text-align: center;
+}
+
+.caseNameBox {
+  width: 279px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin: auto;
+  margin-top: 5px;
+  background: white;
+}
+
+.caseName {
+  width: 269px;
+  height: 38px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+  line-height: 28px;
 }
 
 .footer {

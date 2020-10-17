@@ -6,24 +6,36 @@ export default function Home(): React.ReactElement {
   return (
     <>
       <div className={styles.container}>
-        <head>
-          <title>Judgement Simulator</title>
-          <link rel="icon" href="/favicon.ico" />
-        </head>
-        <div className={styles.header}>판결문 시뮬레이터 </div>
+        <div className={styles.header}>
+          <div className={styles.projectTitle}>판결 시뮬레이터</div>
+        </div>
+
         <div className={styles.main}>
-          <Link href={`/data/온라인 성착취 사이트 운영자`}>
-            <a className={styles.link}>온라인 성착취 사이트 운영자</a>
-          </Link>
-          <Link href={`/data/위력에 의한 성폭력`}>
-            <a className={styles.link}>위력에 의한 성폭력</a>
-          </Link>
-          <Link href={`/data/온라인 성착취 사이트 운영자`}>
-            <a className={styles.link}>온라인 성착취 사이트 운영자</a>
-          </Link>
-          <Link href={`/data/위력에 의한 성폭력`}>
-            <a className={styles.link}>위력에 의한 성폭력</a>
-          </Link>
+          <div className={styles.caseBox}>
+            <Link href={`/data/온라인 성착취 사이트 운영자`}>
+              <a>
+                <div>
+                  <img src={`/imgs/2018고단4404_0.svg`} />
+                </div>
+                <div className={styles.caseNameBox}>
+                  <div className={styles.caseName}>온라인 성착취 사이트 운영자</div>
+                </div>
+              </a>
+            </Link>
+          </div>
+
+          <div className={styles.caseBox}>
+            <Link href={`/data/위력에 의한 성폭력`}>
+              <a>
+                <div>
+                  <img src={`/imgs/2018고단4404_0.svg`} />
+                </div>
+                <div className={styles.caseNameBox}>
+                  <div className={styles.caseName}>위력에 의한 성폭력</div>
+                </div>
+              </a>
+            </Link>
+          </div>
         </div>
         <footer className={styles.footer}>
           <a
