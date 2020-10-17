@@ -3,7 +3,7 @@ import Description from "./Description";
 import styles from "./Judgement.module.scss";
 import ResultReport from "./ResultReport";
 import SentenceCondition from "./SentenceCondition";
-import Sentencing from "./Setencing";
+import Sentencing from "./Sentencing";
 import NextArrowIcon from "public/imgs/arrow-right.svg";
 import Case from "utils/Case.interface";
 import React, { useState, useRef } from "react";
