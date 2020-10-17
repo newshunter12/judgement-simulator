@@ -18,13 +18,13 @@ export default function Description({
   const title = caseTitle;
 
   return (
-    <div>
+    <div className={styles.caseContainer}>
       <div className={styles.caseTitle}> {title}</div>
       <div>
-        <ul>
+        <ul className={styles.instructionList}>
           {instructions.map((instruction, i) => (
             <li key={i} className={styles.instruction}>
-              <div className={styles.title}>소제목: {instruction.title}</div>
+              <div className={styles.title}>{instruction.title}</div>
               <div className={styles.content}>{instruction.content}</div>
               <img src={`/imgs/${caseNum}_${i}.svg`}></img>
             </li>
