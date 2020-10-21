@@ -1,6 +1,6 @@
 @import "styles/variable";
 
-.caseContainer {
+.root {
   padding: 45px;
   background-color: $white;
 }
@@ -13,18 +13,6 @@
   text-decoration: underline;
   text-underline-position: under;
 }
-
-// .instructionList {
-//   padding: 15px 0 0 0;
-//   margin: 0;
-// }
-
-// .instruction {
-//   padding: 15px 0 0 0;
-//   margin: 0;
-//   list-style: none;
-//   // outline: 1px solid $black;
-// }
 
 .title {
   width: fit-content;

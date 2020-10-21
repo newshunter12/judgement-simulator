@@ -5,7 +5,7 @@ import React from "react";
 export default function Home(): React.ReactElement {
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.root}>
         <div className={styles.header}>
           <div className={styles.projectTitle}>판결 시뮬레이터</div>
         </div>

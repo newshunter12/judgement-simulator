@@ -16,7 +16,7 @@ interface Case {
   statutes: [
     {
       article: string;
-      config_requirements: string;
+      config_requirement: string;
       sentencing: string;
     },
   ];

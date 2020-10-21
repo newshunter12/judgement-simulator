@@ -1,7 +1,9 @@
 @import "styles/variable";
 
-.inActive {
-  display: none;
+.root {
+  padding-top: 25px;
+  padding-left: 25px;
+  background-color: $canvas-bg;
 }
 
 .tabList {
@@ -9,10 +11,13 @@
   margin: 0;
 }
 
+.inActive {
+  display: none;
+}
+
 .tab {
   display: inline-block;
   padding: 0.6rem 1rem;
-  border: solid 0.1px black;
   background-color: $black;
   color: gray;
   font-size: 20px;
@@ -25,9 +30,6 @@
   color: $black;
 }
 
-.container {
-  padding-top: 25px;
-  padding-right: 115px;
-  padding-left: 25px;
-  background-color: $canvas-bg;
+.body {
+  display: flex;
 }

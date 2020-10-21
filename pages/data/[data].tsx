@@ -8,18 +8,14 @@ import fs from "fs";
 
 interface Props {
   props: {
-    caseName: string;
     caseObject: Case;
   };
 }
 
-function Data({
-  caseName,
-  caseObject,
-}: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement {
+function Data({ caseObject }: InferGetStaticPropsType<typeof getStaticProps>): React.ReactElement {
   return (
     <div>
-      <Judgement caseName={caseName} caseObject={caseObject} />
+      <Judgement caseObject={caseObject} />
     </div>
   );
 }
@@ -42,7 +38,6 @@ export async function getStaticProps(ctx): Promise<Props> {
 
   return {
     props: {
-      caseName,
       caseObject,
     },
   };

@@ -1,6 +1,6 @@
 @import "styles/variable";
 
-.caseContainer {
+.root {
   padding: 45px;
   background-color: $white;
 }
@@ -23,10 +23,9 @@
   padding: 15px 0 0 0;
   margin: 0;
   list-style: none;
-  // outline: 1px solid $black;
 }
 
-.title {
+.article {
   width: fit-content;
   padding: 5px 10px;
   border: 1px solid $black;
@@ -35,7 +34,7 @@
   font-weight: bold;
 }
 
-.content {
+.requirement {
   margin-top: $content-line-height;
   font-size: $content;
   line-height: $content-line-height;

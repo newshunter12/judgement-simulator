@@ -4,7 +4,7 @@ import React from "react";
 interface Props {
   statutes: {
     article: string;
-    config_requirements: string;
+    config_requirement: string;
     sentencing: string;
   }[];
 }
@@ -12,14 +12,14 @@ interface Props {
 function SentenceCondition({ statutes }: Props): React.ReactElement {
   return (
     <div>
-      <div className={styles.caseContainer}>
+      <div className={styles.root}>
         <h1 className={styles.caseTitle}>죄목에 적용된 법령</h1>
         <ul className={styles.instructionList}>
           {statutes.map((statute, i) => (
             <li className={styles.instruction} key={i}>
-              <div className={styles.title}>{statute.article}</div>
-              <div className={styles.content}>
-                {statute.config_requirements}
+              <div className={styles.article}>{statute.article}</div>
+              <div className={styles.requirement}>
+                {statute.config_requirement}
                 <br></br>
                 {statute.sentencing}
               </div>
