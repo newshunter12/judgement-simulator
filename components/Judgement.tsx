@@ -63,8 +63,6 @@ function Judgement({ caseObject }: Props): React.ReactElement {
             onClick={() => onChangeIndex(selectedIndex - 1)}
             className={`${selectedIndex === 0 ? styles.inActive : ""}`}
           ></PrevArrowIcon>
-          {/*</div>
-        <div>*/}
           <NextArrowIcon
             onClick={() => onChangeIndex(selectedIndex + 1)}
             className={` ${selectedIndex === components.length - 1 ? styles.inActive : ""}`}

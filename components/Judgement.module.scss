@@ -35,6 +35,8 @@
 
 .body {
   display: flex;
+  overflow: auto;
+  max-height: 785px;
   padding-top: 22px;
   padding-left: 70px;
   background: white;
