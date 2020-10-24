@@ -13,7 +13,7 @@ function CasePsychology({ petition }: Props): React.ReactElement {
   const victim = petition.victim;
 
   return (
-    <div className={styles.root}>
+    <div>
       <h1 className={styles.caseTitle}>탄원서를 읽어보세요</h1>
       <div className={styles.title}>피해자측</div>
       <div className={styles.content}>{defendant} </div>

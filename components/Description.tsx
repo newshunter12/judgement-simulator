@@ -18,7 +18,7 @@ export default function Description({
   const title = caseTitle;
 
   return (
-    <div className={styles.root}>
+    <div>
       <div className={styles.caseTitle}> {title}</div>
       <div>
         <ul className={styles.instructionList}>

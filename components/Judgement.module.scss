@@ -1,9 +1,12 @@
 @import "styles/variable";
 
 .root {
+  width: 100%;
   padding-top: 25px;
+  padding-right: 25px;
+  padding-bottom: 35px;
   padding-left: 25px;
-  background-color: $canvas-bg;
+  background: $canvas-bg;
 }
 
 .tabList {
@@ -32,4 +35,9 @@
 
 .body {
   display: flex;
+  overflow: auto;
+  max-height: 785px;
+  padding-top: 22px;
+  padding-left: 70px;
+  background: white;
 }

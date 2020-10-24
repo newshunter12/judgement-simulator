@@ -1,3 +1,4 @@
+import styles from "./ResultReport.module.scss";
 import React from "react";
 
 interface Props {
@@ -14,7 +15,7 @@ function ResultRepot({ result, epilogue }: Props): React.ReactElement {
   return (
     <div>
       <div>
-        <h1>당신의 판결과 실제 판결</h1>
+        <div className={styles.title}>당신의 판결과 실제 판결</div>
         <div>당신의 판결</div>
         <div>징역 {myServitude}</div>
         <div>다른 사람들의 판결</div>
