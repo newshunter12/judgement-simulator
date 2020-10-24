@@ -1,7 +1,7 @@
 {
-  "name": "stayjungle-web-client",
+  "name": "itpas-judgement-simulator",
   "version": "1.0.0",
-  "description": "Stayjungle Web Client V2",
+  "description": "Judgement simulator Web site",
   "main": "index.js",
   "scripts": {
     "dev": "next",

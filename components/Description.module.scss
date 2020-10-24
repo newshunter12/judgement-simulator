@@ -1,12 +1,6 @@
 @import "styles/variable";
 
-.root {
-  padding: 45px;
-  background-color: $white;
-}
-
 .caseTitle {
-  position: static;
   font-size: $title;
   font-weight: 600;
   line-height: $title-line-height;
