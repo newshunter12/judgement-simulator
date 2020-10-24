@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint --syntax scss --fix '**/*.scss'",
-    "lint:js": "eslint --fix --ext .js,.jsx,.ts,.tsx ."
+    "lint:js": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "export": "next export"
   },
   "lint-staged": {
     "**/*.{ts,tsx,js,jsx}": [
