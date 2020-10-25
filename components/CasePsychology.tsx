@@ -18,11 +18,11 @@ function CasePsychology({ petition }: Props): React.ReactElement {
       <div className={styles.boxContainer}>
         <div className={styles.leftBox}>
           <div className={styles.title}>가해자측</div>
-          <div className={styles.content}>{victim}</div>
+          <div className={styles.content}>{defendant}</div>
         </div>
         <div className={styles.rightBox}>
           <div className={styles.title}>피해자측</div>
-          <div className={styles.content}>{defendant} </div>
+          <div className={styles.content}>{victim} </div>
         </div>
       </div>
     </div>

@@ -6,13 +6,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: orange;
+  background: linear-gradient($canvas-bg 59%, $gradation-edge 100%);
 }
 
 .header {
-  display: flex;
   width: 100%;
-  justify-content: center;
   color: black;
   font-size: 30px;
 }
@@ -21,6 +19,8 @@
   width: 411px;
   height: 80px;
   padding-top: 10px;
+  border-right: 10px solid black;
+  border-left: 10px solid black;
   margin: auto;
   background: white;
   font-size: 42px;
@@ -29,22 +29,31 @@
   text-align: center;
 }
 
+.description {
+  padding-top: 31px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
 .main {
-  display: flex;
+  display: grid;
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding: 5rem 0;
+  margin-top: 20px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .caseBox {
   display: flex;
-  width: 420px;
-  height: 270px;
+  width: 400px;
+  height: 280px;
   flex-direction: column;
   padding-top: 75px;
   margin: auto;
   background-image: url("/imgs/case-box.svg");
+  background-size: 400px 280px;
   text-align: center;
 }
 
@@ -52,7 +61,6 @@
   width: 279px;
   height: 48px;
   align-items: center;
-  justify-content: center;
   padding: 5px;
   margin: auto;
   margin-top: 5px;
@@ -74,5 +82,4 @@
   height: 100px;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid #eaeaea;
 }
