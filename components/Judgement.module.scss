@@ -1,11 +1,10 @@
 @import "styles/variable";
 
 .root {
+  position: relative;
   width: 100%;
-  padding-top: 25px;
-  padding-right: 25px;
-  padding-bottom: 35px;
-  padding-left: 25px;
+  height: 100vh;
+  padding: 25px 25px 80px;
   background: $canvas-bg;
 }
 
@@ -36,8 +35,21 @@
 .body {
   display: flex;
   overflow: auto;
-  max-height: 785px;
+  height: 100%;
   padding-top: 22px;
+  padding-right: 70px;
   padding-left: 70px;
   background: white;
+}
+
+.prevArrow {
+  position: absolute;
+  bottom: 55px;
+  left: 60px;
+}
+
+.nextArrow {
+  position: absolute;
+  right: 60px;
+  bottom: 55px;
 }

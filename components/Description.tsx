@@ -18,15 +18,19 @@ export default function Description({
   const title = caseTitle;
 
   return (
-    <div>
+    <div className={styles.root}>
       <div className={styles.caseTitle}> {title}</div>
       <div>
         <ul className={styles.instructionList}>
           {instructions.map((instruction, i) => (
             <li key={i} className={styles.instruction}>
-              <div className={styles.title}>{instruction.title}</div>
-              <div className={styles.content}>{instruction.content}</div>
-              <img src={`/imgs/${caseNum}_${i + 1}.svg`}></img>
+              <div className={styles.leftBox}>
+                <div className={styles.title}>{instruction.title}</div>
+                <div className={styles.content}>{instruction.content}</div>
+              </div>
+              <div className={styles.rightBox}>
+                <img src={`/imgs/${caseNum}_${i + 1}.svg`}></img>
+              </div>
             </li>
           ))}
         </ul>

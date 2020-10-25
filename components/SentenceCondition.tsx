@@ -9,18 +9,19 @@ interface Props {
   }[];
 }
 
+//TODO: apply text-highlight to `sentencing`
 function SentenceCondition({ statutes }: Props): React.ReactElement {
   return (
     <div>
-      <h1 className={styles.caseTitle}>죄목에 적용된 법령</h1>
+      <h1 className={styles.caseTitle}>어떤 조항을 어겼을까요?</h1>
       <ul className={styles.instructionList}>
         {statutes.map((statute, i) => (
           <li className={styles.instruction} key={i}>
             <div className={styles.article}>{statute.article}</div>
             <div className={styles.requirement}>
-              {statute.config_requirement}
+              👤 {statute.config_requirement}
               <br></br>
-              {statute.sentencing}
+              ⚖️ {statute.sentencing}
             </div>
           </li>
         ))}

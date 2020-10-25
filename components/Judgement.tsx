@@ -22,25 +22,21 @@ function Judgement({ caseObject }: Props): React.ReactElement {
   const taps = ["사건 개요", "양형 조건", "사건 심리", "당신의 판결", "결과보기"];
 
   const components = [
-    <div key={0}>
-      <Description
-        instructions={caseObject.instructions}
-        caseTitle={caseObject.caseTitle}
-        caseNum={caseObject.caseNum}
-      />
-    </div>,
-    <div key={1}>
-      <SentenceCondition statutes={caseObject.statutes} />
-    </div>,
-    <div key={2}>
-      <CasePsychology petition={caseObject.petition} />
-    </div>,
-    <div key={3}>
-      <Sentencing plusImpacts={caseObject.plusImpacts} minusImpacts={caseObject.minusImpacts} />
-    </div>,
-    <div key={4}>
-      <ResultReport result={caseObject.result} epilogue={caseObject.epilogue} />
-    </div>,
+    <Description
+      key={0}
+      instructions={caseObject.instructions}
+      caseTitle={caseObject.caseTitle}
+      caseNum={caseObject.caseNum}
+    />,
+
+    <SentenceCondition key={1} statutes={caseObject.statutes} />,
+    <CasePsychology key={2} petition={caseObject.petition} />,
+    <Sentencing
+      key={3}
+      plusImpacts={caseObject.plusImpacts}
+      minusImpacts={caseObject.minusImpacts}
+    />,
+    <ResultReport key={4} result={caseObject.result} epilogue={caseObject.epilogue} />,
   ];
 
   function onChangeIndex(i: number) {
@@ -58,16 +54,16 @@ function Judgement({ caseObject }: Props): React.ReactElement {
       </ul>
       <div className={styles.body}>
         <div>{components[selectedIndex]}</div>
-        <div>
-          <PrevArrowIcon
-            onClick={() => onChangeIndex(selectedIndex - 1)}
-            className={`${selectedIndex === 0 ? styles.inActive : ""}`}
-          ></PrevArrowIcon>
-          <NextArrowIcon
-            onClick={() => onChangeIndex(selectedIndex + 1)}
-            className={` ${selectedIndex === components.length - 1 ? styles.inActive : ""}`}
-          ></NextArrowIcon>
-        </div>
+        <PrevArrowIcon
+          onClick={() => onChangeIndex(selectedIndex - 1)}
+          className={`${styles.prevArrow} ${selectedIndex === 0 ? styles.inActive : ""}`}
+        ></PrevArrowIcon>
+        <NextArrowIcon
+          onClick={() => onChangeIndex(selectedIndex + 1)}
+          className={`${styles.nextArrow} ${
+            selectedIndex === components.length - 1 ? styles.inActive : ""
+          }`}
+        ></NextArrowIcon>
       </div>
     </div>
   );
