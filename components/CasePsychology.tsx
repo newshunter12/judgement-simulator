@@ -14,11 +14,17 @@ function CasePsychology({ petition }: Props): React.ReactElement {
 
   return (
     <div>
-      <h1 className={styles.caseTitle}>탄원서를 읽어보세요</h1>
-      <div className={styles.title}>피해자측</div>
-      <div className={styles.content}>{defendant} </div>
-      <div className={styles.title}>가해자측</div>
-      <div className={styles.content}>{victim}</div>
+      <div className={styles.caseTitle}>탄원서를 읽어보세요</div>
+      <div className={styles.boxContainer}>
+        <div className={styles.leftBox}>
+          <div className={styles.title}>가해자측</div>
+          <div className={styles.content}>{victim}</div>
+        </div>
+        <div className={styles.rightBox}>
+          <div className={styles.title}>피해자측</div>
+          <div className={styles.content}>{defendant} </div>
+        </div>
+      </div>
     </div>
   );
 }

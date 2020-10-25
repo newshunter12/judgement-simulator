@@ -9,6 +9,20 @@
   text-underline-position: under;
 }
 
+.boxContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 38px;
+}
+
+.leftBox {
+  width: 49%;
+}
+
+.rightBox {
+  width: 48%;
+}
+
 .title {
   width: fit-content;
   padding: 5px 10px;

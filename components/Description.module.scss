@@ -1,9 +1,5 @@
 @import "styles/variable";
 
-.root {
-  border: 1px solid orange;
-}
-
 .caseTitle {
   font-size: $title;
   font-weight: 600;
@@ -27,14 +23,12 @@
 
 .leftBox {
   width: 50%;
-  border: 1px black solid;
 }
 
 .rightBox {
   display: flex;
   width: 50%;
   justify-content: center;
-  border: 1px black solid;
 }
 
 .title {
