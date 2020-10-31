@@ -32,6 +32,24 @@
   font-weight: bold;
 }
 
+.sentencingBoxRows {
+  padding-top: 30px;
+}
+
+.sentencingButtonBox {
+  display: inline-flex;
+  flex-direction: column;
+  font-weight: bold;
+  text-align: center;
+
+  .value {
+    padding: 8px 0 8px 0;
+    border-right: 1px black solid;
+    border-left: 1px black solid;
+    margin: 2px 0 2px 0;
+  }
+}
+
 .rightBox {
   width: 50%;
 }

@@ -1,6 +1,8 @@
 import styles from "./Sentencing.module.scss";
 import FormCheckIcon from "public/imgs/formCheck.svg";
+import MinusButtonIcon from "public/imgs/minus-button.svg";
 import MinusCheckIcon from "public/imgs/minusCheck.svg";
+import PlusButtonIcon from "public/imgs/plus-button.svg";
 import PlusCheckIcon from "public/imgs/plusCheck.svg";
 import React, { useState } from "react";
 
@@ -10,6 +12,10 @@ interface Props {
 }
 
 function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactElement {
+  const [prison, setPrison] = useState(0);
+  const [penalty, setPenalty] = useState(0);
+  const [defer, setDefer] = useState(0);
+
   const genders = ["여성", "남성", "기타"];
   const ages = ["20대 미만", "20대", "30대", "40대", "50대", "60대 이상"];
 
@@ -20,7 +26,33 @@ function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactEleme
     <div className={styles.root}>
       <div className={styles.title}>판사님, 형을 선택해주세요</div>
       <div className={styles.boxContainer}>
-        <div className={styles.leftBox}>선고를 내리고 다음 단계로 이동하세요.</div>
+        <div className={styles.leftBox}>
+          <div> 선고를 내리고 다음 단계로 이동하세요.</div>
+          <div className={styles.sentencingBoxRows}>
+            <div className={styles.sentencingButtonBox}>
+              <div> 징역 </div>
+              <PlusButtonIcon onClick={() => setPrison(prison + 1)} />
+              <div className={styles.value}>{prison}년</div>
+              <MinusButtonIcon onClick={() => setPrison(prison - 1)} />
+            </div>
+          </div>
+          <div className={styles.sentencingBoxRows}>
+            <div className={styles.sentencingButtonBox}>
+              <div> 벌금 </div>
+              <PlusButtonIcon onClick={() => setPenalty(penalty + 1)} />
+              <div className={styles.value}>{penalty}원</div>
+              <MinusButtonIcon onClick={() => setPenalty(penalty - 1)} />
+            </div>
+          </div>
+          <div className={styles.sentencingBoxRows}>
+            <div className={styles.sentencingButtonBox}>
+              <div> 집행유예 </div>
+              <PlusButtonIcon onClick={() => setDefer(defer + 1)} />
+              <div className={styles.value}>{defer}년</div>
+              <MinusButtonIcon onClick={() => setDefer(defer - 1)} />
+            </div>
+          </div>
+        </div>
 
         <div className={styles.rightBox}>
           <div>
