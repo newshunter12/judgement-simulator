@@ -15,7 +15,8 @@ export default function Home(): React.ReactElement {
         <div className={styles.header}>
           <div className={styles.projectTitle}>판결 시뮬레이터</div>
           <div className={styles.description}>
-            당신이 판사가 되었습니다. 다음 중 사건을 골라 판결을 내려주세요.
+            당신이 판사가 되었습니다. <br />
+            다음 중 사건을 골라 판결을 내려주세요.
           </div>
         </div>
 

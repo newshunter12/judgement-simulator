@@ -22,6 +22,7 @@
   border-right: 10px solid black;
   border-left: 10px solid black;
   margin: auto;
+  margin-top: 20px;
   background: white;
   font-size: 42px;
   font-weight: bold;
@@ -41,19 +42,19 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 44px;
   grid-template-columns: repeat(2, 1fr);
 }
 
 .caseBox {
   display: flex;
-  width: 400px;
-  height: 280px;
+  width: 330px;
+  height: 230px;
   flex-direction: column;
   padding-top: 75px;
   margin: auto;
   background-image: url("/imgs/case-box.svg");
-  background-size: 400px 280px;
+  background-size: 330px 230px;
   text-align: center;
 }
 
