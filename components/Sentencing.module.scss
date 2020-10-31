@@ -23,7 +23,7 @@
   width: 50%;
 }
 
-.sentencingTip {
+.tip {
   width: fit-content;
   padding: 5px 10px;
   border: 1px solid $black;
@@ -65,4 +65,45 @@
 
 .impact {
   padding-left: 5px;
+}
+
+.formBox {
+  padding-top: 30px;
+}
+
+.desc {
+  padding-top: 8px;
+}
+
+.radioButtonGroup {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.radioButton {
+  display: inline-flex;
+  width: 28px;
+  height: 24px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid black;
+  margin-right: 5px;
+  border-radius: 12px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  word-break: keep-all;
+}
+
+.uncheck {
+  visibility: hidden;
+}
+
+.checked {
+  visibility: visible;
 }
