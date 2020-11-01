@@ -53,7 +53,7 @@ function Judgement({ caseObject }: Props): React.ReactElement {
         ))}
       </ul>
       <div className={styles.body}>
-        <div>{components[selectedIndex]}</div>
+        {components[selectedIndex]}
         <PrevArrowIcon
           onClick={() => onChangeIndex(selectedIndex - 1)}
           className={`${styles.prevArrow} ${selectedIndex === 0 ? styles.inActive : ""}`}
