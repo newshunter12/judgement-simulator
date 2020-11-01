@@ -41,16 +41,18 @@ function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactEleme
     })),
   );
 
-  function clickPlusCheckBox(index: number, newItem: ImpactItem): void {
-    newItem.isChecked = !newItem.isChecked;
-    const items: ImpactItem[] = plusImpactItems.filter((item, i) => (i === index ? newItem : item));
+  function clickPlusCheckBox(index: number, selectedItem: ImpactItem): void {
+    selectedItem.isChecked = !selectedItem.isChecked;
+    const items: ImpactItem[] = plusImpactItems.filter((item, i) =>
+      i === index ? selectedItem : item,
+    );
     setPlusImpactItems(items);
   }
 
-  function clickMinusCheckBox(index: number, newItem: ImpactItem): void {
-    newItem.isChecked = !newItem.isChecked;
+  function clickMinusCheckBox(index: number, selectedItem: ImpactItem): void {
+    selectedItem.isChecked = !selectedItem.isChecked;
     const items: ImpactItem[] = minusImpactItems.filter((item, i) =>
-      i === index ? newItem : item,
+      i === index ? selectedItem : item,
     );
     setMinusImpactItems(items);
   }
