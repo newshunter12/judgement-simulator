@@ -11,6 +11,11 @@ interface Props {
   minusImpacts: string[];
 }
 
+interface ImpactItem {
+  impact: string;
+  isChecked: boolean;
+}
+
 function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactElement {
   const [prison, setPrison] = useState(0);
   const [penalty, setPenalty] = useState(0);
@@ -22,6 +27,34 @@ function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactEleme
   const [selectedGender, setSelectedGender] = useState(null);
   const [selectedAge, setSelectedAge] = useState(null);
 
+  const [plusImpactItems, setPlusImpactItems] = useState(
+    plusImpacts.map((impact) => ({
+      impact,
+      isChecked: false,
+    })),
+  );
+
+  const [minusImpactItems, setMinusImpactItems] = useState(
+    minusImpacts.map((impact) => ({
+      impact,
+      isChecked: false,
+    })),
+  );
+
+  function clickPlusCheckBox(index: number, newItem: ImpactItem): void {
+    newItem.isChecked = !newItem.isChecked;
+    const items: ImpactItem[] = plusImpactItems.filter((item, i) => (i === index ? newItem : item));
+    setPlusImpactItems(items);
+  }
+
+  function clickMinusCheckBox(index: number, newItem: ImpactItem): void {
+    newItem.isChecked = !newItem.isChecked;
+    const items: ImpactItem[] = minusImpactItems.filter((item, i) =>
+      i === index ? newItem : item,
+    );
+    setMinusImpactItems(items);
+  }
+
   return (
     <div className={styles.root}>
       <div className={styles.title}>판사님, 형을 선택해주세요</div>
@@ -30,7 +63,7 @@ function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactEleme
           <div> 선고를 내리고 다음 단계로 이동하세요.</div>
           <div className={styles.sentencingBoxRows}>
             <div className={styles.sentencingButtonBox}>
-              <div> 징역 </div>
+              징역
               <PlusButtonIcon onClick={() => setPrison(prison + 1)} />
               <div className={styles.value}>{prison}년</div>
               <MinusButtonIcon onClick={() => setPrison(prison - 1)} />
@@ -38,7 +71,7 @@ function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactEleme
           </div>
           <div className={styles.sentencingBoxRows}>
             <div className={styles.sentencingButtonBox}>
-              <div> 벌금 </div>
+              벌금
               <PlusButtonIcon onClick={() => setPenalty(penalty + 1)} />
               <div className={styles.value}>{penalty}원</div>
               <MinusButtonIcon onClick={() => setPenalty(penalty - 1)} />
@@ -46,7 +79,7 @@ function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactEleme
           </div>
           <div className={styles.sentencingBoxRows}>
             <div className={styles.sentencingButtonBox}>
-              <div> 집행유예 </div>
+              집행유예
               <PlusButtonIcon onClick={() => setDefer(defer + 1)} />
               <div className={styles.value}>{defer}년</div>
               <MinusButtonIcon onClick={() => setDefer(defer - 1)} />
@@ -55,34 +88,44 @@ function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactEleme
         </div>
 
         <div className={styles.rightBox}>
-          <div>
-            <div className={styles.tip}>최대 n개까지 선택할 수 있습니다.</div>
-            <ul>
-              {plusImpacts.map((impact, i) => (
-                <li key={i} className={styles.impacts}>
-                  <div>
-                    <span className={styles.plusCheckBox}>
-                      <PlusCheckIcon></PlusCheckIcon>
-                    </span>
-                    <span className={styles.impact}>가중사유 | {impact}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <hr></hr>
-            <ul>
-              {minusImpacts.map((impact, i) => (
-                <li key={i} className={styles.impacts}>
-                  <div>
-                    <span className={styles.minusCheckBox}>
-                      <MinusCheckIcon></MinusCheckIcon>
-                    </span>
-                    <span className={styles.impact}>감경사유 | {impact}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className={styles.tip}>최대 n개까지 선택할 수 있습니다.</div>
+          <ul>
+            {plusImpactItems.map((item, i) => (
+              <li key={i} className={styles.impacts}>
+                <div>
+                  <span
+                    className={styles.plusCheckBox}
+                    onClick={() => {
+                      clickPlusCheckBox(i, item);
+                    }}
+                  >
+                    <PlusCheckIcon
+                      className={`${item.isChecked ? styles.checked : styles.uncheck}`}
+                    ></PlusCheckIcon>
+                  </span>
+                  <span className={styles.impact}>가중사유 | {item.impact}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <hr></hr>
+          <ul>
+            {minusImpactItems.map((item, i) => (
+              <li key={i} className={styles.impacts}>
+                <div>
+                  <span
+                    className={styles.minusCheckBox}
+                    onClick={() => clickMinusCheckBox(i, item)}
+                  >
+                    <MinusCheckIcon
+                      className={`${item.isChecked ? styles.checked : styles.uncheck}`}
+                    ></MinusCheckIcon>
+                  </span>
+                  <span className={styles.impact}>감경사유 | {item.impact}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
           <div className={styles.formBox}>
             <div className={styles.tip}>설문에 응해주세요.</div>
             <div className={styles.desc}>
