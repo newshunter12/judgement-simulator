@@ -11,11 +11,6 @@ interface Props {
   minusImpacts: string[];
 }
 
-interface ImpactItem {
-  impact: string;
-  isChecked: boolean;
-}
-
 function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactElement {
   const [prison, setPrison] = useState(0);
   const [penalty, setPenalty] = useState(0);
@@ -40,22 +35,6 @@ function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactEleme
       isChecked: false,
     })),
   );
-
-  function clickPlusCheckBox(index: number, selectedItem: ImpactItem): void {
-    selectedItem.isChecked = !selectedItem.isChecked;
-    const items: ImpactItem[] = plusImpactItems.filter((item, i) =>
-      i === index ? selectedItem : item,
-    );
-    setPlusImpactItems(items);
-  }
-
-  function clickMinusCheckBox(index: number, selectedItem: ImpactItem): void {
-    selectedItem.isChecked = !selectedItem.isChecked;
-    const items: ImpactItem[] = minusImpactItems.filter((item, i) =>
-      i === index ? selectedItem : item,
-    );
-    setMinusImpactItems(items);
-  }
 
   return (
     <div className={styles.root}>
@@ -98,7 +77,9 @@ function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactEleme
                   <span
                     className={styles.plusCheckBox}
                     onClick={() => {
-                      clickPlusCheckBox(i, item);
+                      const items = [...plusImpactItems];
+                      items[i].isChecked = !items[i].isChecked;
+                      setPlusImpactItems(items);
                     }}
                   >
                     <PlusCheckIcon
@@ -117,7 +98,11 @@ function WeightCondition({ plusImpacts, minusImpacts }: Props): React.ReactEleme
                 <div>
                   <span
                     className={styles.minusCheckBox}
-                    onClick={() => clickMinusCheckBox(i, item)}
+                    onClick={() => {
+                      const items = [...minusImpactItems];
+                      items[i].isChecked = !items[i].isChecked;
+                      setMinusImpactItems(items);
+                    }}
                   >
                     <MinusCheckIcon
                       className={`${item.isChecked ? styles.checked : styles.uncheck}`}
