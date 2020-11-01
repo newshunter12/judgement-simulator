@@ -59,13 +59,13 @@ export default function Home(): React.ReactElement {
             </Link>
           </div>
           <div className={styles.caseBox}>
-            <Link href={`/data/8세 여아를 목졸아 강간한 50대 남성`}>
+            <Link href={`/data/아동 성착취 글로벌 웹 사이트 운영`}>
               <a>
                 <div>
                   <img src={`/imgs/2018고단4404_0.svg`} />
                 </div>
                 <div className={styles.caseNameBox}>
-                  <div className={styles.caseName}>8세 여아를 목졸아 강간한 50대 남성</div>
+                  <div className={styles.caseName}>아동 성착취 글로벌 웹 사이트 운영</div>
                 </div>
               </a>
             </Link>
