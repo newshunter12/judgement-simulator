@@ -15,19 +15,26 @@
 .instruction {
   display: flex;
   justify-content: space-between;
-  padding: 15px 0 0 0;
+  padding: 1.5rem 0 0 0;
   margin: 0;
   list-style: none;
 }
 
 .leftBox {
-  width: 50%;
+  width: 48%;
 }
 
 .rightBox {
   display: flex;
-  width: 50%;
+  width: 48%;
   justify-content: center;
+
+  img {
+    margin-top: $content * $commn-line-height;
+    padding-top: $subtitle + 2rem;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .title {
@@ -37,9 +44,12 @@
   border-radius: 30px;
   font-size: $subtitle;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .content {
-  margin-top: $content * $commn-line-height;
+  width: 100%;
+  max-width: 480px;
+  margin: $content * $commn-line-height 0;
   font-size: $content;
 }
