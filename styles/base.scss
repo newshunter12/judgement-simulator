@@ -46,8 +46,13 @@ dd {
 }
 
 /* Set core body defaults */
+html { font-size: 10px; }
+
 body {
   min-height: 100vh;
+  font-size: 1rem;
+  line-height: 1.8;
+  word-break: keep-all;
 }
 
 /* Inherit fonts for inputs and buttons */
